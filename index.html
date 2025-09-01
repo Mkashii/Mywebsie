@@ -4,46 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Kashif – Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #ffffff;
-      color: #1e293b;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      background: #ffffff;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e2e8f0;
-      z-index: 10;
-    }
-    header a {
-      color: #1e293b;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    header a:hover { color: #0ea5e9; }
-    .hero {
-      text-align: left;
-      padding: 100px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
     .typing {
-      font-size: 36px;
-      font-weight: bold;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 3px solid #0ea5e9;
+      border-right: 3px solid #3b82f6;
       width: 0;
-      animation: typing 6s steps(60, end) forwards, blink .8s infinite;
-      color: #0f172a;
+      animation: typing 6s steps(60, end) forwards, blink 0.8s infinite;
     }
     @keyframes typing {
       from { width: 0 }
@@ -52,119 +20,90 @@
     @keyframes blink {
       50% { border-color: transparent }
     }
-    h2 { 
-      margin-top: 60px; 
-      margin-bottom: 20px;
-      font-size: 28px;
-      color: #0f172a;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
     }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
     }
     .card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #0ea5e9;
-    }
-    a.btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #0ea5e9;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a.btn:hover { background: #0284c7; }
-    .footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #e2e8f0;
-      font-size: 14px;
-      color: #64748b;
-      margin-top: 40px;
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
-<body>
-
-<header>
-  <div><strong>Muhammad Kashif</strong></div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#tools">Tools</a>
-    <a href="#contact">Contact</a>
-    <a href="https://github.com/Mkashii" target="_blank">GitHub</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="typing">Muhammad Kashif – Custom Coder – WordPress Plugins, Applications & Websites</div>
-  <p style="margin-top:20px; color:#475569; font-size:18px;">
-    I specialize in building modern websites, custom WordPress plugins, and scalable applications.  
-    I also create smart tools for social media platforms.
-  </p>
-</section>
-
-<section id="services" style="max-width:1000px; margin:auto; padding:40px 20px;">
-  <h2>💼 My Services</h2>
-  <div class="card-grid">
-    <div class="card">
-      <h3>WordPress Plugins</h3>
-      <p>Custom plugins tailored to your needs, from SEO optimization to advanced integrations.</p>
+<body class="bg-white text-gray-900 min-h-screen">
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-white to-gray-50">
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-gray-900 fade-in">Muhammad Kashif</h1>
+    <div class="typing text-xl md:text-2xl font-semibold text-blue-600 mb-8">
+      Custom Coder – WordPress Plugins, Applications & Websites
     </div>
-    <div class="card">
-      <h3>Web Development</h3>
-      <p>Responsive, fast, and user-friendly websites built with modern technologies.</p>
-    </div>
-    <div class="card">
-      <h3>Applications</h3>
-      <p>Full-stack applications designed for performance and scalability.</p>
-    </div>
-  </div>
-</section>
+    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-transform duration-200 transform hover:scale-105 fade-in">
+      Let's Collaborate
+    </a>
+  </section>
 
-<section id="tools" style="max-width:1000px; margin:auto; padding:40px 20px;">
-  <h2>🚀 My Tools</h2>
-  <div class="card-grid">
-    <div class="card">
-      <h3>Instagram Downloader</h3>
-      <p>Download photos, videos & reels directly from Instagram.</p>
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 fade-in">💼 My Services</h2>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card rounded-xl p-8 fade-in">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">WordPress Plugins</h3>
+        <p class="text-gray-700">Custom plugins tailored to your needs, from SEO optimization to advanced integrations.</p>
+      </div>
+      <div class="card rounded-xl p-8 fade-in" style="animation-delay: 0.2s;">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Web Development</h3>
+        <p class="text-gray-700">Responsive, fast, and user-friendly websites built with modern technologies.</p>
+      </div>
+      <div class="card rounded-xl p-8 fade-in" style="animation-delay: 0.4s;">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Applications</h3>
+        <p class="text-gray-700">Full-stack applications designed for performance and scalability.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Facebook Downloader</h3>
-      <p>Save videos from Facebook in high quality.</p>
+  </section>
+
+  <!-- Tools Section -->
+  <section id="tools" class="py-20 px-4 bg-gray-50">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 fade-in">🚀 My Tools</h2>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card rounded-xl p-8 fade-in">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Instagram Downloader</h3>
+        <p class="text-gray-700">Download photos, videos & reels directly from Instagram.</p>
+      </div>
+      <div class="card rounded-xl p-8 fade-in" style="animation-delay: 0.2s;">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Facebook Downloader</h3>
+        <p class="text-gray-700">Save videos from Facebook in high quality.</p>
+      </div>
+      <div class="card rounded-xl p-8 fade-in" style="animation-delay: 0.4s;">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">All Social Downloaders</h3>
+        <p class="text-gray-700">Universal tool to grab content from multiple social platforms.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>All Social Downloaders</h3>
-      <p>Universal tool to grab content from multiple social platforms.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 px-4">
+    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 fade-in">📩 Contact</h2>
+    <div class="max-w-2xl mx-auto text-center fade-in">
+      <p class="text-lg text-gray-700 mb-4">
+        Email: <a href="mailto:hello@muhammadkashif.dev" class="text-blue-600 hover:underline">hello@muhammadkashif.dev</a>
+      </p>
+      <p class="text-lg text-gray-700">
+        GitHub: <a href="https://github.com/Mkashii" target="_blank" class="text-blue-600 hover:underline">github.com/Mkashii</a>
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" style="max-width:1000px; margin:auto; padding:40px 20px;">
-  <h2>📩 Contact</h2>
-  <p>Email: <a href="mailto:hello@muhammadkashif.dev">hello@muhammadkashif.dev</a></p>
-  <p>GitHub: <a href="https://github.com/Mkashii" target="_blank">github.com/Mkashii</a></p>
-</section>
-
-<div class="footer">
-  © 2025 Muhammad Kashif. All rights reserved.
-</div>
-
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-8 text-center text-gray-400">
+    <p>© 2025 Muhammad Kashif. All rights reserved.</p>
+  </footer>
 </body>
 </html>
