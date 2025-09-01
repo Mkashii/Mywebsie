@@ -1,11 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Kashif – Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0f172a, #1e293b);
+      color: #f8fafc;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 10;
+    }
+    header a {
+      color: #f8fafc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    header a:hover { color: #38bdf8; }
+    .hero {
+      text-align: left;
+      padding: 100px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .typing {
+      font-size: 36px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #38bdf8;
+      width: 0;
+      animation: typing 6s steps(50, end) forwards, blink .8s infinite;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    h2 { margin-top: 60px; margin-bottom: 20px; }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(30,41,59,0.85);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      transition: transform 0.3s, border 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border: 1px solid #38bdf8;
+    }
+    a.btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.btn:hover { background: #0ea5e9; }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, world! 🚀</h1>
-  <p>This is my website hosted on GitHub Pages.</p>
+
+<header>
+  <div><strong>Muhammad Kashif</strong></div>
+  <nav>
+    <a href="#tools">Tools</a>
+    <a href="#contact">Contact</a>
+    <a href="https://github.com/Mkashii" target="_blank">GitHub</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="typing">Muhammad Kashif – Custom Coder – WordPress Plugins, Applications & Websites</div>
+  <p style="margin-top:20px; color:#cbd5e1; font-size:18px;">
+    I build fast, secure, and scalable solutions – from custom WordPress plugins to full-stack apps and social media tools.
+  </p>
+</section>
+
+<section id="tools" style="max-width:1000px; margin:auto; padding:40px 20px;">
+  <h2>🚀 My Tools</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Instagram Downloader</h3>
+      <p>Download photos, videos & reels directly from Instagram.</p>
+    </div>
+    <div class="card">
+      <h3>Facebook Downloader</h3>
+      <p>Save videos from Facebook in high quality.</p>
+    </div>
+    <div class="card">
+      <h3>All Social Downloaders</h3>
+      <p>Universal tool to grab content from multiple social platforms.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="max-width:1000px; margin:auto; padding:40px 20px;">
+  <h2>📩 Contact</h2>
+  <p>Email: <a href="mailto:hello@muhammadkashif.dev">hello@muhammadkashif.dev</a></p>
+  <p>GitHub: <a href="https://github.com/Mkashii" target="_blank">github.com/Mkashii</a></p>
+</section>
+
+<div class="footer">
+  © 2025 Muhammad Kashif. All rights reserved.
+</div>
+
 </body>
 </html>
