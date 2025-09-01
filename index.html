@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Kashif – Developer Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0f172a, #1e293b);
+      color: #f8fafc;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    header a {
+      color: #f8fafc;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    header a:hover { color: #38bdf8; }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    h1, h2 { margin-bottom: 20px; }
+    .hero { text-align: center; padding: 80px 20px; }
+    .hero h1 { font-size: 48px; }
+    .hero p { font-size: 20px; color: #cbd5e1; }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(30,41,59,0.8);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 14px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>Muhammad Kashif</strong></div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Muhammad Kashif</h1>
+  <p>Custom Coder – WordPress Plugins, Applications & Websites</p>
+  <a href="#projects" class="btn">See Projects</a>
+  <a href="#contact" class="btn">Contact Me</a>
+</section>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="card-grid">
+    <div class="card"><h3>WordPress Plugins</h3><p>Custom plugins with clean code, admin UI, and updates.</p></div>
+    <div class="card"><h3>Websites & Themes</h3><p>Responsive, SEO-ready WordPress sites and modern designs.</p></div>
+    <div class="card"><h3>Applications</h3><p>Full-stack apps, dashboards, APIs, and business tools.</p></div>
+    <div class="card"><h3>Optimization</h3><p>Fixes, speed improvements, and security hardening.</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card-grid">
+    <div class="card"><h3>WooCommerce Shipping</h3><p>Dynamic courier API integration.</p></div>
+    <div class="card"><h3>Analytics Dashboard</h3><p>SaaS metrics with role-based access.</p></div>
+    <div class="card"><h3>Gutenberg Blocks Suite</h3><p>Custom blocks with live previews.</p></div>
+    <div class="card"><h3>Headless Blog</h3><p>Next.js + WordPress, blazing fast.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:hello@muhammadkashif.dev">hello@muhammadkashif.dev</a></p>
+  <p>Phone: +92 300 1234567</p>
+  <p>GitHub: <a href="https://github.com/your-github" target="_blank">your-github</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/your-linkedin" target="_blank">your-linkedin</a></p>
+</section>
+
+<div class="footer">
+  © 2025 Muhammad Kashif. All rights reserved.
+</div>
+
+</body>
+</html>
