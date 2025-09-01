@@ -8,27 +8,27 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #0f172a, #1e293b);
-      color: #f8fafc;
+      background: #ffffff;
+      color: #1e293b;
     }
     header {
       position: sticky;
       top: 0;
-      background: rgba(15, 23, 42, 0.9);
+      background: #ffffff;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid #e2e8f0;
       z-index: 10;
     }
     header a {
-      color: #f8fafc;
-      margin: 0 10px;
+      color: #1e293b;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: 500;
     }
-    header a:hover { color: #38bdf8; }
+    header a:hover { color: #0ea5e9; }
     .hero {
       text-align: left;
       padding: 100px 20px;
@@ -40,9 +40,10 @@
       font-weight: bold;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 3px solid #38bdf8;
+      border-right: 3px solid #0ea5e9;
       width: 0;
-      animation: typing 6s steps(50, end) forwards, blink .8s infinite;
+      animation: typing 6s steps(60, end) forwards, blink .8s infinite;
+      color: #0f172a;
     }
     @keyframes typing {
       from { width: 0 }
@@ -51,40 +52,51 @@
     @keyframes blink {
       50% { border-color: transparent }
     }
-    h2 { margin-top: 60px; margin-bottom: 20px; }
+    h2 { 
+      margin-top: 60px; 
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #0f172a;
+    }
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
     }
     .card {
-      background: rgba(30,41,59,0.85);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
       border-radius: 12px;
-      padding: 20px;
-      transition: transform 0.3s, border 0.3s;
+      padding: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .card:hover {
       transform: translateY(-5px);
-      border: 1px solid #38bdf8;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0ea5e9;
     }
     a.btn {
       display: inline-block;
       margin-top: 15px;
       padding: 12px 20px;
-      background: #38bdf8;
-      color: #0f172a;
+      background: #0ea5e9;
+      color: #fff;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
     }
-    a.btn:hover { background: #0ea5e9; }
+    a.btn:hover { background: #0284c7; }
     .footer {
       text-align: center;
       padding: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid #e2e8f0;
       font-size: 14px;
-      color: #94a3b8;
+      color: #64748b;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -93,6 +105,7 @@
 <header>
   <div><strong>Muhammad Kashif</strong></div>
   <nav>
+    <a href="#services">Services</a>
     <a href="#tools">Tools</a>
     <a href="#contact">Contact</a>
     <a href="https://github.com/Mkashii" target="_blank">GitHub</a>
@@ -101,9 +114,28 @@
 
 <section class="hero">
   <div class="typing">Muhammad Kashif – Custom Coder – WordPress Plugins, Applications & Websites</div>
-  <p style="margin-top:20px; color:#cbd5e1; font-size:18px;">
-    I build fast, secure, and scalable solutions – from custom WordPress plugins to full-stack apps and social media tools.
+  <p style="margin-top:20px; color:#475569; font-size:18px;">
+    I specialize in building modern websites, custom WordPress plugins, and scalable applications.  
+    I also create smart tools for social media platforms.
   </p>
+</section>
+
+<section id="services" style="max-width:1000px; margin:auto; padding:40px 20px;">
+  <h2>💼 My Services</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>WordPress Plugins</h3>
+      <p>Custom plugins tailored to your needs, from SEO optimization to advanced integrations.</p>
+    </div>
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Responsive, fast, and user-friendly websites built with modern technologies.</p>
+    </div>
+    <div class="card">
+      <h3>Applications</h3>
+      <p>Full-stack applications designed for performance and scalability.</p>
+    </div>
+  </div>
 </section>
 
 <section id="tools" style="max-width:1000px; margin:auto; padding:40px 20px;">
