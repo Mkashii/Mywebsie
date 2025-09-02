@@ -4,99 +4,455 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Kashif – Portfolio</title>
+  <meta name="description" content="Muhammad Kashif – Full‑Stack Developer & WordPress Plugin Specialist. I build scalable websites, plugins, and automation tools with clean code and modern UI." />
+  <link rel="canonical" href="https://muhammadkashif.dev/" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    .typing { white-space: nowrap; overflow: hidden; border-right: 3px solid #3b82f6; width: 0; animation: typing 6s steps(60,end) forwards, blink .8s infinite; }
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink { 50% { border-color: transparent } }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0) } }
+    .card { background: white; border-radius: 1rem; padding: 1.5rem; transition: all .3s ease; box-shadow: 0 4px 10px rgba(0,0,0,.05); }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,.15); }
+
+    /* GitHub-styled slider card */
+    .gh-card { background: #0d1117; border: 1px solid #30363d; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+    .gh-btn { background:#238636; }
+    .gh-btn:hover { background:#2ea043; }
+    .glow { box-shadow: 0 0 0 2px rgba(56,139,253,.15), 0 8px 30px rgba(56,139,253,.15); }
+
+    /* Slider essentials */
+    #plugin-slider { display:flex; will-change: transform; }
+    .slide { min-width: 100%; display:flex; justify-content:center; padding: 1rem; }
+    .dots button { width: .65rem; height: .65rem; border-radius: 999px; border: 1px solid #6b7280; }
+    .dots button.active { background: #3b82f6; border-color: #3b82f6; transform: scale(1.2); }.scroll-smooth {
+  scroll-behavior: smooth; /* slower, smooth scrolling */
+}
+
+  </style>
+
+  <!-- JSON-LD: Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Kashif",
+    "jobTitle": "Full-Stack Developer & WordPress Plugin Specialist",
+    "url": "https://muhammadkashif.dev/",
+    "sameAs": [
+      "https://github.com/Mkashii",
+      "https://www.linkedin.com/in/kashif-fazal/"
+    ]
+  }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen font-sans">
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-extrabold text-xl tracking-tight">MK<span class="text-blue-600">.</span></a>
+      <ul class="hidden md:flex gap-6 font-medium">
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#plugins" class="hover:text-blue-600">Plugins</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/Mkashii" target="_blank" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 hover:border-gray-300">
+          <i class="fab fa-github"></i><span class="text-sm">GitHub</span>
+        </a>
+        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold">Hire Me</a>
+      </div>
+    </nav>
+  </header>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Kashif – Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .typing {
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #3b82f6;
-      width: 0;
-      animation: typing 6s steps(60, end) forwards, blink 0.8s infinite;
-    }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-    @keyframes blink {
-      50% { border-color: transparent }
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s ease-out forwards;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .card {
-      background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    }
+  body { font-family: 'Arial', sans-serif; background: #f9fafb; overflow-x: hidden; }
+  .typing { display:inline-block; white-space:nowrap; overflow:hidden; border-right:3px solid #3b82f6; font-weight:600; animation: typing 4s steps(40,end) forwards, blink .8s infinite;}
+  @keyframes typing { from { width:0 } to { width:100% } }
+  @keyframes blink { 50% { border-color:transparent } }
+  
+  /* Hero section */
+  #home { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #fff; overflow: hidden; }
+  
+  /* Floating icons container */
+  .floating-icons { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  
+  /* Floating icons animation */
+  .floating-icons i {
+    position: absolute;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Float in place animation */
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(15deg); }
+    50% { transform: translateY(10px) rotate(-10deg); }
+    75% { transform: translateY(-5px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
   </style>
-</head>
-<body class="bg-white text-gray-900 min-h-screen">
-  <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-white to-gray-50">
-    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-gray-900 fade-in">Muhammad Kashif</h1>
-    <div class="typing text-xl md:text-2xl font-semibold text-blue-600 mb-8">
-      Custom Coder – WordPress Plugins, Applications & Websites
+  </head>
+  <body>
+  
+  <section id="home">
+    <!-- Floating Coding Icons -->
+    <div class="floating-icons">
+      <!-- Big icons -->
+      <i class="fab fa-html5 text-orange-500" style="top:5%; left:10%; font-size:4rem; animation-delay:0s;"></i>
+      <i class="fab fa-css3-alt text-blue-500" style="top:15%; left:80%; font-size:3.5rem; animation-delay:1s;"></i>
+      <i class="fab fa-js text-yellow-500" style="top:50%; left:40%; font-size:4.5rem; animation-delay:2s;"></i>
+      <i class="fab fa-php text-indigo-600" style="top:70%; left:20%; font-size:3rem; animation-delay:3s;"></i>
+      <i class="fab fa-python text-green-500" style="top:30%; left:60%; font-size:4rem; animation-delay:4s;"></i>
+      <i class="fab fa-wordpress text-blue-600" style="top:80%; left:70%; font-size:4rem; animation-delay:5s;"></i>
+      <i class="fab fa-github text-gray-800" style="top:60%; left:20%; font-size:3.5rem; animation-delay:6s;"></i>
+  
+      <!-- Small icons -->
+      <i class="fab fa-react text-sky-400" style="top:40%; left:50%; font-size:2rem; animation-delay:0.5s;"></i>
+      <i class="fab fa-node-js text-green-600" style="top:10%; left:30%; font-size:2.5rem; animation-delay:1.5s;"></i>
+      <i class="fab fa-laravel text-red-600" style="top:25%; left:15%; font-size:2rem; animation-delay:2.5s;"></i>
+      <i class="fab fa-python text-green-400" style="top:35%; left:75%; font-size:2rem; animation-delay:3.5s;"></i>
+      <i class="fab fa-git-alt text-red-500" style="top:65%; left:55%; font-size:2.2rem; animation-delay:4.5s;"></i>
+      <i class="fab fa-docker text-blue-400" style="top:75%; left:35%; font-size:2.5rem; animation-delay:5.5s;"></i>
+      <i class="fab fa-aws text-orange-600" style="top:20%; left:45%; font-size:2rem; animation-delay:6.5s;"></i>
     </div>
-    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-transform duration-200 transform hover:scale-105 fade-in">
-      Let's Collaborate
-    </a>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-20 px-4">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 fade-in">💼 My Services</h2>
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="card rounded-xl p-8 fade-in">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">WordPress Plugins</h3>
-        <p class="text-gray-700">Custom plugins tailored to your needs, from SEO optimization to advanced integrations.</p>
-      </div>
-      <div class="card rounded-xl p-8 fade-in" style="animation-delay: 0.2s;">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Web Development</h3>
-        <p class="text-gray-700">Responsive, fast, and user-friendly websites built with modern technologies.</p>
-      </div>
-      <div class="card rounded-xl p-8 fade-in" style="animation-delay: 0.4s;">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Applications</h3>
-        <p class="text-gray-700">Full-stack applications designed for performance and scalability.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tools Section -->
-  <section id="tools" class="py-20 px-4 bg-gray-50">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 fade-in">🚀 My Tools</h2>
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="card rounded-xl p-8 fade-in">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Instagram Downloader</h3>
-        <p class="text-gray-700">Download photos, videos & reels directly from Instagram.</p>
-      </div>
-      <div class="card rounded-xl p-8 fade-in" style="animation-delay: 0.2s;">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Facebook Downloader</h3>
-        <p class="text-gray-700">Save videos from Facebook in high quality.</p>
-      </div>
-      <div class="card rounded-xl p-8 fade-in" style="animation-delay: 0.4s;">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">All Social Downloaders</h3>
-        <p class="text-gray-700">Universal tool to grab content from multiple social platforms.</p>
-      </div>
+  
+    <!-- Profile -->
+    <img src="https://avatars.githubusercontent.com/u/000000?v=4" alt="Muhammad Kashif" class="w-36 h-36 md:w-40 md:h-40 rounded-full shadow-lg mb-6 z-10 relative">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 z-10 relative">Muhammad Kashif</h1>
+    <div class="typing text-lg md:text-2xl text-blue-600 mb-6 z-10 relative">Full-Stack Developer | WordPress Plugin Specialist</div>
+    <p class="max-w-xl text-gray-600 mb-8 z-10 relative">I build scalable websites, applications, and automation tools with clean code and modern technologies 🚀</p>
+    <div class="flex gap-3 z-10 relative">
+      <a href="#plugins" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full font-semibold">View Plugins</a>
+      <a href="#projects" class="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white py-3 px-6 rounded-full font-semibold">Projects</a>
     </div>
   </section>
+  
+  </body>
+  </html>
+  
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-4">
-    <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900 fade-in">📩 Contact</h2>
-    <div class="max-w-2xl mx-auto text-center fade-in">
-      <p class="text-lg text-gray-700 mb-4">
-        Email: <a href="mailto:hello@muhammadkashif.dev" class="text-blue-600 hover:underline">hello@muhammadkashif.dev</a>
+<!-- Workflow / How I Work -->
+<section id="workflow" class="py-24 px-6 bg-white text-gray-900">
+  <div class="max-w-5xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-extrabold mb-4">💡 How I Work</h2>
+    <p class="text-gray-600 max-w-3xl mx-auto">
+      From idea to deployment, I follow a structured workflow to deliver high-quality, scalable solutions.
+    </p>
+  </div>
+
+  <!-- Timeline / Workflow -->
+  <div class="relative max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:justify-between items-start md:items-center">
+      
+      <!-- Step -->
+      <div class="flex flex-col items-center text-center mb-12 md:mb-0 md:w-1/6">
+        <div class="bg-blue-600 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4 shadow-lg">
+          <i class="fas fa-lightbulb text-2xl"></i>
+        </div>
+        <h4 class="font-semibold mb-2">Ideation</h4>
+        <p class="text-gray-600 text-sm">Brainstorming ideas and identifying the best solutions for the project.</p>
+      </div>
+
+      <div class="hidden md:block flex-1 border-t-2 border-gray-300 relative -mt-8 z-0"></div>
+
+      <!-- Step -->
+      <div class="flex flex-col items-center text-center mb-12 md:mb-0 md:w-1/6">
+        <div class="bg-green-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4 shadow-lg">
+          <i class="fas fa-pencil-ruler text-2xl"></i>
+        </div>
+        <h4 class="font-semibold mb-2">Prototype</h4>
+        <p class="text-gray-600 text-sm">Creating wireframes and prototypes to visualize the solution.</p>
+      </div>
+
+      <div class="hidden md:block flex-1 border-t-2 border-gray-300 relative -mt-8 z-0"></div>
+
+      <!-- Step -->
+      <div class="flex flex-col items-center text-center mb-12 md:mb-0 md:w-1/6">
+        <div class="bg-purple-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4 shadow-lg">
+          <i class="fas fa-code text-2xl"></i>
+        </div>
+        <h4 class="font-semibold mb-2">Build</h4>
+        <p class="text-gray-600 text-sm">Developing scalable, maintainable code using modern technologies.</p>
+      </div>
+
+      <div class="hidden md:block flex-1 border-t-2 border-gray-300 relative -mt-8 z-0"></div>
+
+      <!-- Step -->
+      <div class="flex flex-col items-center text-center mb-12 md:mb-0 md:w-1/6">
+        <div class="bg-yellow-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4 shadow-lg">
+          <i class="fas fa-vials text-2xl"></i>
+        </div>
+        <h4 class="font-semibold mb-2">Test</h4>
+        <p class="text-gray-600 text-sm">Rigorous testing to ensure reliability, performance, and security.</p>
+      </div>
+
+      <div class="hidden md:block flex-1 border-t-2 border-gray-300 relative -mt-8 z-0"></div>
+
+      <!-- Step -->
+      <div class="flex flex-col items-center text-center md:w-1/6">
+        <div class="bg-red-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4 shadow-lg">
+          <i class="fas fa-rocket text-2xl"></i>
+        </div>
+        <h4 class="font-semibold mb-2">Launch</h4>
+        <p class="text-gray-600 text-sm">Deploying the project smoothly and monitoring initial performance.</p>
+      </div>
+
+      <div class="hidden md:block flex-1 border-t-2 border-gray-300 relative -mt-8 z-0"></div>
+
+      <!-- Step -->
+      <div class="flex flex-col items-center text-center md:w-1/6">
+        <div class="bg-indigo-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4 shadow-lg">
+          <i class="fas fa-tools text-2xl"></i>
+        </div>
+        <h4 class="font-semibold mb-2">Maintain</h4>
+        <p class="text-gray-600 text-sm">Ongoing updates, bug fixes, and optimizations for long-term success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 px-6 bg-gray-100">
+    <h2 class="text-4xl font-bold text-center mb-12">🛠 My Skills</h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="card"><i class="fab fa-html5 text-3xl text-orange-500 mb-2"></i><p>HTML / CSS</p></div>
+      <div class="card"><i class="fab fa-js text-3xl text-yellow-500 mb-2"></i><p>JavaScript / React</p></div>
+      <div class="card"><i class="fab fa-php text-3xl text-indigo-600 mb-2"></i><p>PHP / Laravel</p></div>
+      <div class="card"><i class="fab fa-wordpress text-3xl text-blue-500 mb-2"></i><p>WordPress Plugins</p></div>
+      <div class="card"><i class="fab fa-python text-3xl text-green-500 mb-2"></i><p>Python</p></div>
+      <div class="card"><i class="fas fa-database text-3xl text-gray-600 mb-2"></i><p>MySQL / MongoDB</p></div>
+      <div class="card"><i class="fas fa-plug text-3xl text-purple-600 mb-2"></i><p>APIs</p></div>
+      <div class="card"><i class="fab fa-git-alt text-3xl text-red-600 mb-2"></i><p>Git & GitHub</p></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 px-6">
+    <h2 class="text-4xl font-bold text-center mb-12">📂 My Projects</h2>
+
+    <!-- Python Projects -->
+    <h3 class="text-2xl font-semibold text-blue-600 mb-8 text-center">🐍 Python Projects</h3>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="card"><i class="fab fa-python text-3xl text-blue-500 mb-3"></i><h4 class="font-semibold">Word to HTML Converter</h4><p>Convert Word files into clean HTML. (2025)</p></div>
+      <div class="card"><i class="fas fa-map-marked-alt text-3xl text-green-600 mb-3"></i><h4 class="font-semibold">Google Maps Scraper</h4><p>Extract business data with Selenium & Tkinter.</p></div>
+      <div class="card"><i class="fas fa-image text-3xl text-pink-500 mb-3"></i><h4 class="font-semibold">Image Resizer</h4><p>Resize multiple images with a modern UI.</p></div>
+      <div class="card"><i class="fas fa-qrcode text-3xl text-gray-700 mb-3"></i><h4 class="font-semibold">QR Code Generator</h4><p>Create custom QR codes with colors & styles.</p></div>
+      <div class="card"><i class="fas fa-search text-3xl text-indigo-500 mb-3"></i><h4 class="font-semibold">SEO Scraper</h4><p>Extract titles & headers for SEO analysis.</p></div>
+      <div class="card"><i class="fas fa-envelope text-3xl text-red-500 mb-3"></i><h4 class="font-semibold">Email Scraper</h4><p>Find emails in websites & text files.</p></div>
+    </div>
+  </section><!-- Wide Plugins Section (Light Theme) -->
+<!-- Plugins Section (White Theme) -->
+<section id="plugins" class="py-24 px-6 bg-gray-50 text-gray-900 relative border-y border-gray-200">
+  <div class="max-w-3xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-extrabold">🔌 WordPress Plugins</h2>
+    <p class="text-gray-600 mt-3">A curated set of practical plugins and integrations I shipped. Click “View” to explore each plugin.</p>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <!-- Local SEO -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-search-location text-6xl text-blue-400 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Local SEO</h4>
+      <p class="text-gray-700 mb-4">View all deliverables in our Local SEO Offerings.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Calculate Shipping Rates -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-truck text-6xl text-green-400 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Calculate Shipping Rates</h4>
+      <p class="text-gray-700 mb-4">WooCommerce shipping estimator — accurate, fast and configurable.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Insurance Needs Calculator -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-calculator text-6xl text-purple-400 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">INSURANCE NEEDS CALCULATOR</h4>
+      <p class="text-gray-700 mb-4">Estimate coverage needs with assumptions you can tune.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Loan Affordability -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-sack-dollar text-6xl text-amber-300 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Loan Affordability Calculator (USD)</h4>
+      <p class="text-gray-700 mb-4">Monthly payments, amortization and debt-to-income helpers.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Crypto Investment Profit -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fa-brands fa-bitcoin text-6xl text-yellow-400 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Crypto Investment Profit Calculator (USD)</h4>
+      <p class="text-gray-700 mb-4">Calculate gains, breakeven points and portfolio returns.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- CNG Rates -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-gas-pump text-6xl text-yellow-400 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">CNG Rates</h4>
+      <p class="text-gray-700 mb-4">Latest CNG pricing with region filters.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- IESCO Bill Redirect -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-bolt text-6xl text-orange-400 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">IESCO Bill (Redirect)</h4>
+      <p class="text-gray-700 mb-4">Quick, reliable redirect to IESCO billing portal.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Online News Integration -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-newspaper text-6xl text-indigo-300 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Online News Integration</h4>
+      <p class="text-gray-700 mb-4">Embed fresh headlines anywhere on your site.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Prayer Timings -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-mosque text-6xl text-teal-300 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Prayer Timings</h4>
+      <p class="text-gray-700 mb-4">Daily timings by location with hijri support.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Gold Rates (PK) -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-coins text-6xl text-yellow-300 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Gold Rates in Pakistan</h4>
+      <p class="text-gray-700 mb-4">Live bullion prices with karat conversions.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Open Market Currency (PK) -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-money-bill-wave text-6xl text-emerald-300 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Pakistan Open Market Currency Rates</h4>
+      <p class="text-gray-700 mb-4">Realtime forex rates for major pairs.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Current Weather -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-cloud-sun text-6xl text-sky-300 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Current Weather</h4>
+      <p class="text-gray-700 mb-4">City search with temperature, wind and forecasts.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Currency Converter -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-exchange-alt text-6xl text-pink-500 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Currency Converter</h4>
+      <p class="text-gray-700 mb-4">Convert with live rates and rounding modes.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Fuel Prices in Pakistan -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fas fa-gas-pump text-6xl text-yellow-500 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Fuel Prices in Pakistan</h4>
+      <p class="text-gray-700 mb-4">Latest petrol & diesel prices with change history.</p>
+      <a href="https://afdah.space/" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        View <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <!-- Explore GitHub -->
+    <div class="gh-card p-8 text-center border border-gray-200 rounded-xl shadow-md transition-transform hover:-translate-y-2 hover:shadow-lg bg-white">
+      <i class="fab fa-github text-6xl text-gray-700 mb-4"></i>
+      <h4 class="text-2xl font-bold mb-2">Explore More on GitHub</h4>
+      <p class="text-gray-700 mb-4">All my open-source projects and contributions in one place.</p>
+      <a href="https://github.com/Mkashii" target="_blank" class="inline-flex items-center gap-2 bg-blue-100 text-gray-900 hover:bg-blue-200 px-6 py-2 rounded-full">
+        Visit GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+
+  </div>
+</section><!-- Fullscreen Scroll Gallery --><!-- Project Scroll Gallery -->
+<!-- Certifications -->
+<section id="certifications" class="py-24 px-6 bg-gray-100">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h2 class="text-4xl font-bold mb-4">🎓 Certifications</h2>
+    <p class="text-gray-700 text-lg">Here are some of the professional certifications I’ve earned to enhance my skills and knowledge in development, data analysis, and automation.</p>
+  </div>
+
+  <div class="max-w-6xl mx-auto space-y-8">
+    <div class="card flex flex-col md:flex-row items-center gap-6 p-10">
+      <i class="fas fa-certificate text-6xl text-yellow-500 md:mr-6"></i>
+      <div class="text-left">
+        <h4 class="text-2xl font-bold mb-2">IBM Data Analysis Using Python</h4>
+        <p class="text-gray-700 mb-2">This certification covers data analysis techniques using Python, including Pandas, NumPy, data visualization, and working with datasets to generate meaningful insights.</p>
+        <p class="text-gray-500 mb-4">Issued: July 2025</p>
+        <a href="https://www.credly.com/badges/776bb679-311f-45bc-8755-744bdb388edc/linked_in_profile" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold">
+          View Badge <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Add more certifications here as additional .card blocks -->
+  </div>
+</section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6 bg-gray-100">
+    <h2 class="text-4xl font-bold text-center mb-12">📩 Contact Me</h2>
+    <div class="max-w-xl mx-auto text-center space-y-4">
+      <p><i class="fas fa-envelope text-blue-600"></i>
+        <a href="mailto:hello@muhammadkashif.dev" class="text-blue-600 underline">hello@muhammadkashif.dev</a>
       </p>
-      <p class="text-lg text-gray-700">
-        GitHub: <a href="https://github.com/Mkashii" target="_blank" class="text-blue-600 hover:underline">github.com/Mkashii</a>
+      <p><i class="fab fa-github text-gray-800"></i>
+        <a href="https://github.com/Mkashii" target="_blank" class="text-blue-600 underline">github.com/Mkashii</a>
+      </p>
+      <p><i class="fab fa-linkedin text-blue-700"></i>
+        <a href="https://www.linkedin.com/in/kashif-fazal/" target="_blank" class="text-blue-600 underline">LinkedIn Profile</a>
       </p>
     </div>
   </section>
@@ -105,5 +461,69 @@
   <footer class="bg-gray-900 py-8 text-center text-gray-400">
     <p>© 2025 Muhammad Kashif. All rights reserved.</p>
   </footer>
+
+  <!-- Slider Script -->
+  <script>
+    const slider = document.getElementById('plugin-slider');
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const dotsWrap = document.querySelector('.dots');
+
+    // ensure proper flex container
+    slider.style.display = 'flex';
+
+    let index = 0;
+    const total = slides.length;
+    let timer = null;
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', 'Go to slide ' + (i+1));
+      b.addEventListener('click', () => goTo(i, true));
+      dotsWrap.appendChild(b);
+    });
+
+    function updateDots() {
+      dotsWrap.querySelectorAll('button').forEach((d, i) => {
+        d.classList.toggle('active', i === index);
+      });
+    }
+
+    function goTo(i, pause) {
+      index = (i + total) % total;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      updateDots();
+      if (pause) restart();
+    }
+
+    function next() { goTo(index + 1); }
+
+    function start() {
+      timer = setInterval(next, 4200);
+    }
+
+    function stop() {
+      clearInterval(timer); timer = null;
+    }
+
+    function restart() { stop(); start(); }
+
+    // Pause on hover
+    const container = slider.parentElement;
+    container.addEventListener('mouseenter', stop);
+    container.addEventListener('mouseleave', start);
+
+    // Swipe support (basic)
+    let startX = 0;
+    container.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; stop(); });
+    container.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (dx > 40) goTo(index - 1, true); else if (dx < -40) goTo(index + 1, true); else start();
+    });
+
+    // Init
+    updateDots();
+    start();
+  </script>
 </body>
 </html>
